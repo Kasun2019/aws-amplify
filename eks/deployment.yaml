@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aecs-api-deployment
+  labels:
+    app: aecs-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aecs-api
+  template:
+    metadata:
+      labels:
+        app: aecs-api
+    spec:
+      containers:
+      - name: aecs-api
+        image: 975049932981.dkr.ecr.us-east-1.amazonaws.com/webapp:latest
+        ports:
+        - containerPort: 3000
