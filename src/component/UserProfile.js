@@ -52,7 +52,7 @@ const UserProfile = (props) => {
     try
     {
       const params = {
-        type: fetchType
+        "type": fetchType
       };
       
       const url = new URL('http://abea66b2eb8cf4d7ebd0174f2ae85635-144574045.us-east-1.elb.amazonaws.com/details');
@@ -72,7 +72,7 @@ const UserProfile = (props) => {
       });
 
       const data = await response.json();
-      console.log('Response:', data);
+      console.log('Response 1:', data);
       setnewQuotes(data.data);
     }
     catch(error)
@@ -108,8 +108,9 @@ const UserProfile = (props) => {
       }
     
       const data = await response.json();
-      console.log('Response:', data.type);
+      console.log('Response 2:', data.type);
       setfetchType(data.type);
+      console.log('set type ',fetchType);
     }
     catch(error)
     {
