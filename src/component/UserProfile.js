@@ -117,7 +117,12 @@ const UserProfile = (props) => {
       console.error('Error:', error);
     }
 
+
+
   }
+  useEffect(() => {
+    console.log('Updated fetchType:', fetchType);
+  }, [fetchType]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
