@@ -73,8 +73,7 @@ const UserProfile = (props) => {
 
       const data = await response.json();
       console.log('Response:', data);
-      setfetchType(data.data);
-      setnewQuotes();
+      setnewQuotes(data.data);
     }
     catch(error)
     {
