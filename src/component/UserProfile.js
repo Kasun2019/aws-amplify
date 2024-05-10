@@ -50,7 +50,8 @@ const UserProfile = (props) => {
 
     try
     {
-      const response = await fetch('https://cors-everywhere.herokuapp.com/http://abea66b2eb8cf4d7ebd0174f2ae85635-144574045.us-east-1.elb.amazonaws.com/details/Entrepreneur', {
+      // https://cors-everywhere.herokuapp.com/
+      const response = await fetch('http://abea66b2eb8cf4d7ebd0174f2ae85635-144574045.us-east-1.elb.amazonaws.com/details/Entrepreneur', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
