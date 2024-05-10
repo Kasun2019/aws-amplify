@@ -111,9 +111,9 @@ const UserProfile = (props) => {
       })
       .then(data => {
     
-        const data =  response.json();
-        console.log('Response:', data.type);
-        setfetchType(data.type);
+        const datac =  data.json();
+        console.log('Response:', datac.type);
+        setfetchType(datac.type);
         getNewQuotes();
       
         
