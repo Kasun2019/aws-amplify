@@ -102,12 +102,27 @@ const UserProfile = (props) => {
           'Access-Control-Allow-Headers': 'Content-Type',
           'Access-Control-Max-Age': 86400,
         }
-      });
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Quote response was not ok');
+        }
+        return response.json(); 
+      })
+      .then(data => {
+    
+        const data =  response.json();
+        console.log('Response:', data.type);
+        setfetchType(data.type);
+        getNewQuotes();
+      
+        
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });;
 
-      const data = await response.json();
-      console.log('Response:', data.type);
-      setfetchType(data.type);
-      getNewQuotes();
+      
     }
     catch(error)
     {
