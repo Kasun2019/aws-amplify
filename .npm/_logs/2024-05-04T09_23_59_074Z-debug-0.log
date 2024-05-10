@@ -1,0 +1,108 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.2.4
+2 info using node@v20.11.1
+3 timing npm:load:whichnode Completed in 2ms
+4 timing config:load:defaults Completed in 2ms
+5 timing config:load:file:C:\Program Files\nodejs\node_modules\npm\npmrc Completed in 4ms
+6 timing config:load:builtin Completed in 4ms
+7 timing config:load:cli Completed in 2ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:file:D:\WORKING\SLIIT\CLOUD_AWS\assingment\aecs_assingment24\.npmrc Completed in 0ms
+10 timing config:load:project Completed in 1ms
+11 timing config:load:file:C:\Users\kasun\.npmrc Completed in 0ms
+12 timing config:load:user Completed in 0ms
+13 timing config:load:file:C:\Users\kasun\AppData\Roaming\npm\etc\npmrc Completed in 0ms
+14 timing config:load:global Completed in 0ms
+15 timing config:load:setEnvs Completed in 0ms
+16 timing config:load Completed in 11ms
+17 timing npm:load:configload Completed in 11ms
+18 timing config:load:flatten Completed in 2ms
+19 timing npm:load:mkdirpcache Completed in 1ms
+20 timing npm:load:mkdirplogs Completed in 0ms
+21 verbose title npm ci
+22 verbose argv "ci" "--cache" ".npm" "--prefer-offline"
+23 timing npm:load:setTitle Completed in 1ms
+24 timing npm:load:display Completed in 1ms
+25 verbose logfile logs-max:10 dir:D:\WORKING\SLIIT\CLOUD_AWS\assingment\aecs_assingment24\.npm\_logs\2024-05-04T09_23_59_074Z-
+26 verbose logfile D:\WORKING\SLIIT\CLOUD_AWS\assingment\aecs_assingment24\.npm\_logs\2024-05-04T09_23_59_074Z-debug-0.log
+27 timing npm:load:logFile Completed in 8ms
+28 timing npm:load:timers Completed in 0ms
+29 timing npm:load:configScope Completed in 0ms
+30 timing npm:load Completed in 47ms
+31 timing arborist:ctor Completed in 0ms
+32 silly logfile done cleaning log files
+33 timing idealTree:init Completed in 615ms
+34 timing idealTree:userRequests Completed in 0ms
+35 silly idealTree buildDeps
+36 timing idealTree:#root Completed in 0ms
+37 silly fetch manifest typescript@^3.2.1 || ^4
+38 http fetch GET 200 https://registry.npmjs.org/npm 1604ms (cache miss)
+39 http fetch GET 200 https://registry.npmjs.org/typescript 696ms (cache miss)
+40 silly placeDep ROOT typescript@4.9.5 REPLACE for: react-scripts@5.0.1 want: ^3.2.1 || ^4
+41 timing idealTree:node_modules/react-scripts Completed in 786ms
+42 timing idealTree:node_modules/typescript Completed in 0ms
+43 timing idealTree:buildDeps Completed in 787ms
+44 timing idealTree:fixDepFlags Completed in 19ms
+45 timing idealTree Completed in 1432ms
+46 timing command:ci Completed in 1879ms
+47 notice
+47 notice New [33mminor[39m version of npm available! [31m10.2.4[39m -> [32m10.7.0[39m
+47 notice Changelog: [36mhttps://github.com/npm/cli/releases/tag/v10.7.0[39m
+47 notice Run [32mnpm install -g npm@10.7.0[39m to update!
+47 notice
+48 verbose stack Error: 
+48 verbose stack `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+48 verbose stack
+48 verbose stack Invalid: lock file's typescript@5.4.5 does not satisfy typescript@4.9.5
+48 verbose stack
+48 verbose stack Clean install a project
+48 verbose stack
+48 verbose stack Usage:
+48 verbose stack npm ci
+48 verbose stack
+48 verbose stack Options:
+48 verbose stack [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+48 verbose stack [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+48 verbose stack [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+48 verbose stack [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+48 verbose stack [--no-bin-links] [--no-fund] [--dry-run]
+48 verbose stack [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+48 verbose stack [-ws|--workspaces] [--include-workspace-root] [--install-links]
+48 verbose stack
+48 verbose stack aliases: clean-install, ic, install-clean, isntall-clean
+48 verbose stack
+48 verbose stack Run "npm help ci" for more info
+48 verbose stack     at CI.usageError (C:\Program Files\nodejs\node_modules\npm\lib\base-command.js:113:26)
+48 verbose stack     at CI.exec (C:\Program Files\nodejs\node_modules\npm\lib\commands\ci.js:69:18)
+48 verbose stack     at async module.exports (C:\Program Files\nodejs\node_modules\npm\lib\cli-entry.js:61:5)
+49 verbose cwd D:\WORKING\SLIIT\CLOUD_AWS\assingment\aecs_assingment24
+50 verbose Windows_NT 10.0.19045
+51 verbose node v20.11.1
+52 verbose npm  v10.2.4
+53 error code EUSAGE
+54 error
+54 error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+54 error
+54 error Invalid: lock file's typescript@5.4.5 does not satisfy typescript@4.9.5
+54 error
+54 error Clean install a project
+54 error
+54 error Usage:
+54 error npm ci
+54 error
+54 error Options:
+54 error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+54 error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+54 error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+54 error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+54 error [--no-bin-links] [--no-fund] [--dry-run]
+54 error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+54 error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+54 error
+54 error aliases: clean-install, ic, install-clean, isntall-clean
+54 error
+54 error Run "npm help ci" for more info
+55 verbose exit 1
+56 timing npm Completed in 2360ms
+57 verbose code 1
+58 error A complete log of this run can be found in: D:\WORKING\SLIIT\CLOUD_AWS\assingment\aecs_assingment24\.npm\_logs\2024-05-04T09_23_59_074Z-debug-0.log
