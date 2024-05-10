@@ -106,7 +106,8 @@ const UserProfile = (props) => {
 
       const data = await response.json();
       console.log('Response:', data.type);
-      getNewQuotes(data.type);
+      setfetchType(data.type);
+      getNewQuotes();
     }
     catch(error)
     {
