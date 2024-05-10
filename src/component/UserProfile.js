@@ -57,6 +57,8 @@ const UserProfile = (props) => {
       
       const url = new URL('http://abea66b2eb8cf4d7ebd0174f2ae85635-144574045.us-east-1.elb.amazonaws.com/details');
       url.search = new URLSearchParams(params).toString();
+
+      console.log('params   :', params);
       // https://cors-everywhere.herokuapp.com/
       const response = await fetch(url, {
         method: 'GET',
