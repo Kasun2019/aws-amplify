@@ -13,6 +13,7 @@ const UserProfile = (props) => {
   const userId = props.props;
 
   const [newQuotes, setnewQuotes] = useState('');
+  const [fetchType, setfetchType] = useState('');
 
 
   
@@ -22,7 +23,7 @@ const UserProfile = (props) => {
    
 
     try {
-        const response = await fetch('http://localhost:8080/putDetails', {
+        const response = await fetch('http://abea66b2eb8cf4d7ebd0174f2ae85635-144574045.us-east-1.elb.amazonaws.com/putDetails', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -50,8 +51,14 @@ const UserProfile = (props) => {
 
     try
     {
+      const params = {
+        type: fetchType
+      };
+      
+      const url = new URL('http://abea66b2eb8cf4d7ebd0174f2ae85635-144574045.us-east-1.elb.amazonaws.com/details');
+      url.search = new URLSearchParams(params).toString();
       // https://cors-everywhere.herokuapp.com/
-      const response = await fetch('http://abea66b2eb8cf4d7ebd0174f2ae85635-144574045.us-east-1.elb.amazonaws.com/details/Entrepreneur', {
+      const response = await fetch(url, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -64,7 +71,40 @@ const UserProfile = (props) => {
 
       const data = await response.json();
       console.log('Response:', data);
-      setnewQuotes(data.data);
+      setfetchType(data.data);
+      setnewQuotes();
+    }
+    catch(error)
+    {
+      console.error('Error:', error);
+    }
+
+  }
+  const getloginuser =  async (e) =>{
+
+    try
+    {
+      const params = {
+        user: userId
+      };
+      
+      const url = new URL('http://abea66b2eb8cf4d7ebd0174f2ae85635-144574045.us-east-1.elb.amazonaws.com/getUser');
+      url.search = new URLSearchParams(params).toString();
+      // https://cors-everywhere.herokuapp.com/
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, POST, DELETE, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+          'Access-Control-Max-Age': 86400,
+        }
+      });
+
+      const data = await response.json();
+      console.log('Response:', data.type);
+      getNewQuotes(data.type);
     }
     catch(error)
     {
@@ -73,9 +113,12 @@ const UserProfile = (props) => {
 
   }
 
-  useEffect(()=>{
-    getNewQuotes();
-  })
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      getloginuser();
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className='cart'>
