@@ -23,7 +23,7 @@ const UserProfile = (props) => {
    
 
     try {
-        const response = await fetch('http://abea66b2eb8cf4d7ebd0174f2ae85635-144574045.us-east-1.elb.amazonaws.com/putDetails', {
+        const response = await fetch('http://a7e55d6ed9f8644ccba75872cf204c6a-490837591.us-east-1.elb.amazonaws.com/putDetails', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ const UserProfile = (props) => {
         user: userId
       };
       
-      const url = new URL('http://abea66b2eb8cf4d7ebd0174f2ae85635-144574045.us-east-1.elb.amazonaws.com/getUser');
+      const url = new URL('http://a7e55d6ed9f8644ccba75872cf204c6a-490837591.us-east-1.elb.amazonaws.com/getUser');
       url.search = new URLSearchParams(params).toString();
       // https://cors-everywhere.herokuapp.com/
       const response = await fetch(url, {
