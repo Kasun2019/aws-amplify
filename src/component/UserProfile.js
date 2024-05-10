@@ -111,7 +111,6 @@ const UserProfile = (props) => {
       const data = await response.json();
       console.log('Response:', data.type);
       setfetchType(data.type);
-      getNewQuotes();
     }
     catch(error)
     {
@@ -123,7 +122,14 @@ const UserProfile = (props) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       getloginuser();
-    }, 5000);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      getNewQuotes();
+    }, 6000);
     return () => clearTimeout(timer);
   }, []);
 
