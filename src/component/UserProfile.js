@@ -121,7 +121,13 @@ const UserProfile = (props) => {
 
   }
   useEffect(() => {
-    console.log('Updated fetchType:', fetchType);
+    if (fetchType) {
+      console.log('Updated fetchType:', fetchType);
+      const timer = setTimeout(() => {
+        getNewQuotes();
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
   }, [fetchType]);
 
   useEffect(() => {
@@ -131,12 +137,12 @@ const UserProfile = (props) => {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      getNewQuotes();
-    }, 6000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     getNewQuotes();
+  //   }, 3000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <div className='cart'>
